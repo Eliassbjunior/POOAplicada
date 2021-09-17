@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa de JavaScript</title>
+    
+</head>
+<link rel="stylesheet" href="estilo/style.css"/>
+
+<body>
+    <div class="barra_tarefas">
+        <h1>Tarefas</h1>
+        <ul>
+            <li><a href="#centro">Tarefa 1</a></li>
+            <li>Tarefa 2</li>
+        </ul>
+    </div>
+
+    <div id="centro">
+        <b>Formulário de cadastro</b><br><br><br>
+        <form>
+            <label for="txt_name">Nome: </label>
+            <input type="text" id="txt_name" name="txt_name"><br><br>
+            <label for="txt_password">Senha: </label>
+            <input type="password" id="txt_password" name="txt_password"><br><br>
+            <input onclick="inserir()" id="button" type="button" value="Registrar">
+        </form>
+    </div>
+
+    <div id="resposta">
+        <ul id="lista"></ul>
+
+    </div>
+
+    <script>
+        var nomes = [];
+
+
+        function inserir(){
+            var lista = document.getElementById("lista").innerHTML;
+            var nome = document.getElementById("txt_name").value;
+            var password = document.getElementById("txt_password").value;
+            var palavras = " NOME: " + nome + " SENHA: "+ password;
+
+            if(nome === '' || nome === ' '|| password === '' || password === ' '){
+                alert("Preencha dos campos é obrigatório!");
+            }else{
+                    if(nomes.length >= 7){
+                        alert("Lista Cheia!");
+                    }else{
+                        lista += "<li>" + "<button id='btt'>X</button> " + palavras + "</li>";
+                        document.getElementById("lista").innerHTML = lista;
+                        document.getElementById("txt_name").value = name
+                        document.getElementById("txt_password").value = name;
+                        nomes.push(nome);
+                    }
+                
+            }
+            
+        } 
+       
+
+        var elem = document.getElementById("lista");
+        elem.addEventListener('click', function(e){
+            if(e.target && e.target.nodeName == "BUTTON") {
+                e.target.parentNode.remove();
+                
+            }
+        });
+
+       
+    </script>
+
+</body>
+</html>
+
