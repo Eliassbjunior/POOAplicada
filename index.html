@@ -13,11 +13,12 @@
     <div class="barra_tarefas">
         <h1>Tarefas</h1>
         <ul>
-            <li><a href="#centro">Tarefa 1</a></li>
-            <li>Tarefa 2</li>
+            <li><a href="#title1">Tarefa 1</a></li>
+            <li><a href="#title2">Tarefa 2</a></li>
         </ul>
     </div>
 
+    <h1 id="title1"> </h1>
     <div id="centro">
         <b>Formulário de cadastro</b><br><br><br>
         <form>
@@ -34,45 +35,22 @@
 
     </div>
 
-    <script>
-        var nomes = [];
+    <h1 id="title2"> </h1>
 
+    
 
-        function inserir(){
-            var lista = document.getElementById("lista").innerHTML;
-            var nome = document.getElementById("txt_name").value;
-            var password = document.getElementById("txt_password").value;
-            var palavras = " NOME: " + nome + " SENHA: "+ password;
+    <br><br><br><br>
+    <div id="tarefa2">
+        <h1>Conversão polegadas x centímentros</h1><br><br>
+        <form>
+            <input onkeyup="calcularC()" type="text" id="txt_polegadas">
+            <em>=</em>
+            <input onkeyup="calcularP()"type="text" id="txt_centimetros">
+        </form>
+    </div>
 
-            if(nome === '' || nome === ' '|| password === '' || password === ' '){
-                alert("Preencha dos campos é obrigatório!");
-            }else{
-                    if(nomes.length >= 7){
-                        alert("Lista Cheia!");
-                    }else{
-                        lista += "<li>" + "<button id='btt'>X</button> " + palavras + "</li>";
-                        document.getElementById("lista").innerHTML = lista;
-                        document.getElementById("txt_name").value = name
-                        document.getElementById("txt_password").value = name;
-                        nomes.push(nome);
-                    }
-                
-            }
-            
-        } 
-       
-
-        var elem = document.getElementById("lista");
-        elem.addEventListener('click', function(e){
-            if(e.target && e.target.nodeName == "BUTTON") {
-                e.target.parentNode.remove();
-                
-            }
-        });
-
-       
-    </script>
-
+    
+    <script src="script/javascript.js"></script>
 </body>
 </html>
 
