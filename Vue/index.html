@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">  
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    ID:<input v-model="id">
+    Escola:<input v-model="escola">
+    Ano:<input v-model="ano">
+    <button @click='inserir()'>Inserir</button>
+    </br>
+    </br>
+    <turmas>
+        
+    
+    </turmas>
+    
+
+</div>
+<script>
+    Vue.component('turmas',{
+        data(){
+            return{
+                id: '',
+                escola: '',
+                ano:'',
+
+            }
+        },
+        methods: {
+            
+        },
+        template: `
+        <div>
+            <h3>Turma</h3>
+            <h5>{{id}}</h5>
+            <h5>{{escola}}</h5>
+            <h5>{{ano}}</h5>
+        </div>
+        `
+    })
+
+    const app = new Vue({
+        el: '#app',
+        methods: {
+            inserir(){
+                
+            }
+        }
+    }); 
+</script>
+</body>
+</html>
+
